@@ -65,7 +65,7 @@ $("#view_projects_btn").on("click", function(){
             project_des += "Floor Area: " + project_floor_area + "\n";
             project_des += "Number of households: " + project_household_nummber + "\n";
             project_des += "Total Build Up Area: " + project_total_build_area + "\n\n";
-            project_des += "Owner: " + project_owner + "\n\n\n";
+            project_des += "Owner: " + project_owner + "\n";
             project_des += "Status: " + project_status + "\n";
             project_des += "Year: " + project_year;
 
