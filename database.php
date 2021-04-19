@@ -216,4 +216,32 @@ function alert($msg) {
         
     }
 
+    // editing project
+    if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['editproject'])){
+        header('Content-Type: text/plain');
+        $connection = connectDb("localhost","root","","nt_projects");
+        $oldName = $_POST['oldName'];
+        $name = $_POST['name'];
+        $location = $_POST['location'];
+        $disctrict = $_POST['disctrict'];
+        $function = $_POST['function'];
+        $lotNumber = $_POST['lotNumber'];
+        $siteArea = $_POST['siteArea'];
+        $buildingHeight = $_POST['buildingHeight'];
+        $floorArea = $_POST['floorArea'];
+        $totalBuildArea = $_POST['totalBuildArea'];
+        $householdNumber = $_POST['householdNumber'];
+        $owner = $_POST['owner'];
+        $status = $_POST['status'];
+        $year = $_POST['year'];
+
+        $result = executeQuery($connection, "update `project` set `name` = '$name', `location` = '$location', `disctrict` = '$disctrict', `function` = '$function', `lot_number` = '$lotNumber', `site_area` = '$siteArea', `building_height` = '$buildingHeight', `floor_area` = '$floorArea', `total_build_area` = '$totalBuildArea', `household_number` = '$householdNumber', `owner` = '$owner', `status` = '$status', `year` = '$year' WHERE `project`.`name` = '$oldName'");
+        if($result){
+            echo 1;
+        } else {
+            echo -1;
+        }
+        
+    }
+
 ?>
