@@ -1,5 +1,5 @@
 .u-section-1 {
-  background-image: url("images/pexels-photo-1029615.jpeg");
+  background-image: url("../images/pexels-photo-1029615.jpeg");
   background-position: 50% 50%;
 }
 
@@ -100,7 +100,7 @@
 
 .u-section-2 .u-image-1 {
   min-height: 510px;
-  background-image: url("images/pexels-photo-2987769.jpeg");
+  background-image: url("../images/pexels-photo-2987769.jpeg");
   background-position: 50% 50%;
 }
 
@@ -312,7 +312,7 @@
 
 .u-section-3 .u-image-1 {
   min-height: 639px;
-  background-image: url("images/pexels-photo-3467149.jpeg");
+  background-image: url("../images/pexels-photo-3467149.jpeg");
   background-position: 50% 50%;
 }
 
@@ -562,7 +562,7 @@
     margin-right: 0;
   }
 }.u-section-4 {
-  background-image: url("images/pexels-photo-325185.jpeg");
+  background-image: url("../images/pexels-photo-325185.jpeg");
   background-position: 50% 50%;
 }
 
@@ -833,7 +833,7 @@
 
 .u-section-6 .u-image-1 {
   min-height: 510px;
-  background-image: url("images/pexels-photo-2987769.jpeg");
+  background-image: url("../images/pexels-photo-2987769.jpeg");
   background-position: 50% 50%;
 }
 
