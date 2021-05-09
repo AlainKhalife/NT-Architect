@@ -244,4 +244,41 @@ function alert($msg) {
         
     }
 
+    //Getting all messages from db
+    if($_SERVER['REQUEST_METHOD']=='GET' && isset($_GET['viewallmessages'])){
+        header('Content-type:application/json;charset=utf-8');
+        $connection = connectDb("localhost","root","","nt_projects");
+        $result = selectQuery($connection, "select * from messages");
+        $ans = json_encode($result);
+        echo $ans;
+    }
+
+    //deleting 1 message
+    if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['delete_msg'])){
+        header('Content-Type: text/plain');
+        $connection = connectDb("localhost","root","","nt_projects");
+        $id = $_POST['id'];
+        $result = executeQuery($connection, "delete from messages where number = $id");
+
+        if($result){
+        echo 1;
+        } else {
+            echo -1;
+        }
+    }
+
+    //deleting all messages
+    if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['deleteAllmsg'])){
+        header('Content-Type: text/plain');
+        $connection = connectDb("localhost","root","","nt_projects");
+        $id = $_POST['id'];
+        $result = executeQuery($connection, "delete from messages");
+
+        if($result){
+        echo 1;
+        } else {
+            echo -1;
+        }
+    }
+
 ?>

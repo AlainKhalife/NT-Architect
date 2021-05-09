@@ -384,3 +384,159 @@ $("#apply_changes_btn").on("click", function () {
     }
   });
 });
+
+// messages.html
+//--------------------------
+
+let hasdeleted = false;
+
+// gettings messages from DB and filling them in cards
+function getMessages(){
+  $.ajax({
+    url: "http://localhost/NT%20Architects/database.php",
+    type: "GET",
+    async: false,
+    data: { viewallmessages: "true" },
+    dataType: 'json',
+    success: function (obj) {
+      for (let i = 0; i < obj.length; i++) {
+        // getting the message info
+        let id = obj[i].number;
+        let firstname = obj[i].first_name;
+        let lastname = obj[i].last_name;
+        let email = obj[i].email;
+        let phone_number = obj[i].phone_number;
+        let message = obj[i].message
+
+
+        // Creating the cards dynamically
+        let maindiv = document.createElement("div");
+        maindiv.className = "card";
+        maindiv.style.width = "50rem";
+        maindiv.style.display = "inline-block";
+        maindiv.style.marginLeft = "15px";
+        maindiv.style.marginTop = "10px";
+
+        let cardbody = document.createElement("div"); // Card body
+        cardbody.className = "card-body";
+
+        let cardtitle = document.createElement("h5");
+        cardtitle.className = "card-title";
+        cardtitle.innerText = "Message " + (i + 1);
+
+        let p = document.createElement("p");
+        let text = "First Name: " + firstname + "\n";
+        text += "Last Name: " + lastname + "\n";
+        text += "Phone Number: " + phone_number + "\n";
+        text += "Email: " + email + "\n";
+        text += "Message: \n" + message + "\n";
+        p.innerText = text;
+
+        let a = document.createElement("a");
+        a.href = "#";
+        a.className = "btn btn-primary delete_msg_btn";
+        a.style.float = "right";
+        a.style.marginBottom = "10px"
+        a.innerText = "Delete";
+        //a.id = "delete_msg_btn";
+        a.setAttribute("project_id", id);
+
+        cardbody.appendChild(cardtitle);
+        cardbody.appendChild(p);
+        cardbody.appendChild(a);
+
+        maindiv.appendChild(cardbody);
+
+        document.getElementById("messages").appendChild(maindiv);
+      }
+
+      // Creating delete all messages btn
+      if (obj.length > 0 && !hasdeleted) {
+        let div = document.createElement("div");
+        let a = document.createElement("a");
+        a.href = "#";
+        a.className = "btn btn-primary deleteallmsg_btn";
+        a.style.width = "fit-content";
+        a.style.float = "right";
+        a.style.marginRight = "20px"
+        a.style.marginTop = "20px"
+        a.style.marginBottom = "10px"
+        a.style.position = "relative";
+        a.id = "delete_all_msg_btn"
+        a.innerText = "Delete All Messages";
+
+        div.appendChild(a);
+        document.getElementById("content").appendChild(div);
+      }
+
+      if (obj.length == 0) {
+        let p = document.createElement("h3");
+        p.innerText = "There are no messages available"
+
+        document.getElementById("messages").appendChild(p);
+      }
+
+    },
+    error: function (errorObj, txt) {
+      alert(errorObj.status + " " + errorObj.statusText);
+    }
+  });
+}
+
+getMessages();
+
+// deleting one message:
+$("body").on("click", ".btn.btn-primary.delete_msg_btn", function (e) {
+  e.preventDefault();
+  hasdeleted = true;
+
+  let project_id = e.target.getAttribute("project_id");
+  $.ajax({
+    url: "http://localhost/NT%20Architects/database.php",
+    type: "POST",
+    data: {
+      delete_msg: "true",
+      id: project_id
+    },
+    dataType: 'text',
+    success: function (obj) {
+
+      if (obj == 1) {
+        document.getElementById("messages").innerHTML = "";
+        getMessages();
+      } else {
+        alert("Error in database")
+      }
+
+    },
+    error: function (errorObj, txt) {
+      alert(errorObj.status + " " + errorObj.statusText);
+    }
+  });
+});
+
+//deleting all messages
+$("body").on("click", ".btn.btn-primary.deleteallmsg_btn", function (e) {
+  e.preventDefault();
+  console.log("Delete All");
+
+  $.ajax({
+    url: "http://localhost/NT%20Architects/database.php",
+    type: "POST",
+    data: {
+      deleteAllmsg: "true",
+    },
+    dataType: 'text',
+    success: function (obj) {
+        document.getElementById("messages").innerHTML = "";
+        document.getElementById("delete_all_msg_btn").remove();
+        let p = document.createElement("h3");
+        p.innerText = "There are no messages available"
+
+        document.getElementById("messages").appendChild(p);
+    },
+    error: function (errorObj, txt) {
+      alert(errorObj.status + " " + errorObj.statusText);
+    }
+  });
+});
