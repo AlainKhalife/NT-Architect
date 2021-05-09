@@ -3309,6 +3309,12 @@ input[type="button"].btn-block {
   justify-content: center;
 }
 
+.image-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .btn-group-vertical > .btn,
 .btn-group-vertical > .btn-group {
   width: 100%;
