@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             font-family: sans-serif;
-            background: linear-gradient(to right, #b92b27, #1565c0)
+            background: linear-gradient(to right, #ffe5d9, #ffd7ba)
         }
 
         .card {
@@ -27,7 +27,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            background: #191919;
+            background: #ddbea9;
             ;
             text-align: center;
             transition: 0.25s;
@@ -41,11 +41,11 @@
             display: block;
             margin: 20px auto;
             text-align: center;
-            border: 2px solid #3498db;
+            border: 2px solid #fffffc;
             padding: 10px 10px;
             width: 250px;
             outline: none;
-            color: white;
+            color: black;
             border-radius: 24px;
             transition: 0.25s
         }
@@ -59,7 +59,7 @@
         .box input[type="text"]:focus,
         .box input[type="password"]:focus {
             width: 300px;
-            border-color: #2ecc71
+            border-color: #fffffc
         }
 
         .box input[type="submit"] {
@@ -68,17 +68,19 @@
             display: block;
             margin: 20px auto;
             text-align: center;
-            border: 2px solid #2ecc71;
+            border: 2px solid #fffffc;
             padding: 14px 40px;
             outline: none;
-            color: white;
+            color: grey;
             border-radius: 24px;
             transition: 0.25s;
             cursor: pointer
         }
 
         .box input[type="submit"]:hover {
-            background: #2ecc71
+            width: 200px;
+            border-color: #fffffc;
+            color: white;
         }
 
         .forgot {
@@ -98,15 +100,15 @@
         }
 
         .social-network a.icoFacebook:hover {
-            background-color: #3B5998
+            background-color: #ffd6a5
         }
 
         .social-network a.icoTwitter:hover {
-            background-color: #33ccff
+            background-color: #ffd6a5
         }
 
         .social-network a.icoGoogle:hover {
-            background-color: #BD3518
+            background-color: #ffd6a5
         }
 
         .social-network a.icoFacebook:hover i,
@@ -117,7 +119,7 @@
 
         a.socialIcon:hover,
         .socialHoverClass {
-            color: #44BCDD
+            color: #ffd6a5
         }
 
         .social-circle li a {
@@ -144,7 +146,7 @@
         }
 
         .social-circle i {
-            color: #fff;
+            color: #ffd6a5;
             transition: all 0.8s;
             transition: all 0.8s
         }
@@ -162,7 +164,7 @@
                 <div class="card">
                     <form method="POST" action="http://localhost/NT%20Architects/database.php" class="box">
                         <h1>Admin Login</h1>
-                        <p class="text-muted"> Please enter your login and password!</p> 
+                        <p class="text-muted"> Please provide the username and password</p> 
                             <input type="text" name="txt_username" id="txt_username" placeholder="Username"> 
                             <input type="password" name="txt_password" id="txt_password" placeholder="Password"> 
                             <input type="submit" name="" value="Login" href="#">
