@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="./css/Projects.css" media="screen">
   <script class="u-script" type="text/javascript" src="./js/jquery.js" defer=""></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-  <script class="u-script" type="text/javascript" src="./js/nplibrary.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="./js/slide.js" defer=""></script>
+  
   <link id="u-theme-google-font" rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
 
@@ -22,7 +23,8 @@
 		"@type": "Organization",
 		"name": "NT Architects",
 		"url": "index.html"
-}</script>
+}
+</script>
   <meta property="og:title" content="Projects">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#2a3166">
@@ -98,8 +100,12 @@
   </header>
   <section class="u-align-center u-clearfix u-palette-1-base u-section-1" id="carousel_cc5f">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <h1 class="u-text u-text-1">NT Projects</h1>
-      <div class="u-table u-table-responsive u-table-1">
+      <!-- <h1 class="u-text u-text-1">NT Projects</h1> -->
+      
+      <div>
+        <img src="images/logobg-removebg-preview.png" class="logoimg">
+
+      <div class="u-table u-table-responsive u-table-1 projdiv">
         <table class="u-table-entity">
           <colgroup>
             <col width="42.3%">
@@ -108,27 +114,70 @@
           </colgroup>
           <tbody class="u-table-body">
             <tr style="height: 50px;">
-              <td class="u-table-cell u-table-cell-1">Select a project to view</td>
+              <div>
+              <td class="u-table-cell u-table-cell-1 projstyle projstylelgnd">    Select a project:</td>
+              <br>
               <td class="u-table-cell">
                 <select id="select_project" style="text-align: center; font-size: 40sp; color: black; width: 100%; height: 100%;">
                   <!-- Options will be added dynamicly from database from projects.js -->
                 </select>
               </td>
+            </div>
               <td class="u-table-cell">
-                <a class="u-btn u-btn-round u-button-style u-hover-palette-4-light-2 u-radius-25 u-text-palette-1-base u-white u-btn-1"
-                  href="#" id="view_projects_btn">View Project</a>
+                <a class="u-btn u-btn-round projstyle u-button-style u-hover-palette-4-light-2 u-radius-25 u-text-palette-1-base u-white u-btn-1"
+                  href="#" id="view_projects_btn">View </a>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
+</div>
+
+<br>
 
       <!--This div container should start should start as visibility gone-->
-      <div id="project_detail_container" style="display: none;">
-      <img id="project_image_src" src="./images/projects_images/Al Khalaf Building1.jpg" alt="Al Khalif" style="height: 50%; width: 40%; float: left;">
-      <div>
+      <div id="project_detail_container"  style="display: none;">
+      
+        <div class="slideshow-container pictureslideshow">
+
+          <div class="mySlides fade">
+            <img id="project_image_src" src="./images/projects_images/Al Khalaf Building1.jpg" alt="Al Khalif" style="height: 50%; width: 40%; float: left;">
+          </div>
+          <div class="mySlides fade">
+        <img id="project_image_src" src="./images/projects_images/Al Khalaf Building1.jpg" alt="Al Khalif" style="height: 50%; width: 40%; float: left;">
+        
+        
+          </div>
+        
+          <div class="mySlides fade">
+            <img id="project_image_src" src="./images/projects_images/Al Khalaf Building1.jpg" alt="Al Khalif" style="height: 50%; width: 40%; float: left;">
+          </div>
+        
+        
+     
+        <br>
+        <div style="text-align:center" class="dots">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+      <div class="detailslide">
         <p id="project_name_text" style="font-size: xx-large;">Project Name</p>
-        <p id="project_description_text">This is the description of the project</p>
+        <p id="project_yearfunction_text">2001</p> 
+        
+
+<br>
+<p id="project_location_text">Beirut</p> 
+ 
+<br>
+<p id="project_sitearea_text">Beirut</p> 
+<
+<br>
+<p id="project_owner_text">Beirut</p> 
+      
+        <p id="project_description_text">This is the description of the project</p> 
+
       </div>
       </div>
     </div>

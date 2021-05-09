@@ -77,3 +77,30 @@ $("#view_projects_btn").on("click", function(){
         }
     });
 })
+
+// let project_name_text = document.getElementById("project_name_text");
+// project_name_text.innerText = project_name;
+
+// let project_year_container = document.getElementById("project_yearfunction_text");
+// let project_fun = "Function: " + project_function + "\n";
+//  project_fun+= "Year: " + project_year + "\n";
+//  project_year_container.innerText = project_fun;
+
+//  let project_loc_container = document.getElementById("project_location_text");
+//  let project_loc = "Location: " + project_location + "\n";
+//  project_loc+= "District: " + project_district + "\n";
+//  project_loc+= "Lot Number: " + project_lot_number + "\n";
+//  project_loc_container.innerText = project_loc;
+
+//  let project_area_container = document.getElementById("project_sitearea_text");
+//  let project_area = "Site Area: " + project_site_area + "\n";
+//  project_area+= "Floor Area: " + project_floor_area + "\n";
+//  project_area+= "Building Height: " + project_building_height + "\n";
+//  project_area+= "Number of households: " + project_household_nummber + "\n";
+//  project_area+= "Total Build Up Area: " + project_total_build_area + "\n\n";
+
+//  project_area_container.innerText = project_area;
+
+//  let project_owner_container = document.getElementById("project_owner_text");
+//  let project_owner = "Owner: " + project_owner + "\n";
+//  project_owner_container.innerText = project_owner;
