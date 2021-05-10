@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Admin Login</title>
+    <title>NT Architects | Admin</title>
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet'>
     <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' rel='stylesheet'>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -15,12 +15,12 @@
             font-family: sans-serif;
             background: linear-gradient(to right, #ffe5d9, #ffd7ba)
         }
-
+        
         .card {
             margin-bottom: 20px;
             border: none
         }
-
+        
         .box {
             width: 500px;
             padding: 40px;
@@ -33,7 +33,7 @@
             transition: 0.25s;
             margin-top: 100px
         }
-
+        
         .box input[type="text"],
         .box input[type="password"] {
             border: 0;
@@ -49,19 +49,19 @@
             border-radius: 24px;
             transition: 0.25s
         }
-
+        
         .box h1 {
             color: white;
             text-transform: uppercase;
             font-weight: 500
         }
-
+        
         .box input[type="text"]:focus,
         .box input[type="password"]:focus {
             width: 300px;
             border-color: #fffffc
         }
-
+        
         .box input[type="submit"] {
             border: 0;
             background: none;
@@ -76,52 +76,52 @@
             transition: 0.25s;
             cursor: pointer
         }
-
+        
         .box input[type="submit"]:hover {
             width: 200px;
             border-color: #fffffc;
             color: white;
         }
-
+        
         .forgot {
             text-decoration: underline
         }
-
+        
         ul.social-network {
             list-style: none;
             display: inline;
             margin-left: 0 !important;
             padding: 0
         }
-
+        
         ul.social-network li {
             display: inline;
             margin: 0 5px
         }
-
+        
         .social-network a.icoFacebook:hover {
             background-color: #ffd6a5
         }
-
+        
         .social-network a.icoTwitter:hover {
             background-color: #ffd6a5
         }
-
+        
         .social-network a.icoGoogle:hover {
             background-color: #ffd6a5
         }
-
+        
         .social-network a.icoFacebook:hover i,
         .social-network a.icoTwitter:hover i,
         .social-network a.icoGoogle:hover i {
             color: #fff
         }
-
+        
         a.socialIcon:hover,
         .socialHoverClass {
             color: #ffd6a5
         }
-
+        
         .social-circle li a {
             display: inline-block;
             position: relative;
@@ -132,19 +132,19 @@
             height: 50px;
             font-size: 20px
         }
-
+        
         .social-circle li i {
             margin: 0;
             line-height: 50px;
             text-align: center
         }
-
+        
         .social-circle li a:hover i,
         .triggeredHover {
             transform: rotate(360deg);
             transition: all 0.2s
         }
-
+        
         .social-circle i {
             color: #ffd6a5;
             transition: all 0.8s;
@@ -152,8 +152,7 @@
         }
     </style>
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script type='text/javascript'
-        src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
     <script type='text/javascript'></script>
 </head>
 
@@ -164,10 +163,10 @@
                 <div class="card">
                     <form method="POST" action="http://localhost/NT%20Architects/database.php" class="box">
                         <h1>Admin Login</h1>
-                        <p class="text-muted"> Please provide the username and password</p> 
-                            <input type="text" name="txt_username" id="txt_username" placeholder="Username"> 
-                            <input type="password" name="txt_password" id="txt_password" placeholder="Password"> 
-                            <input type="submit" name="" value="Login" href="#">
+                        <p class="text-muted"> Please provide the username and password</p>
+                        <input type="text" name="txt_username" id="txt_username" placeholder="Username">
+                        <input type="password" name="txt_password" id="txt_password" placeholder="Password">
+                        <input type="submit" name="" value="Login" href="#">
                     </form>
                 </div>
             </div>
