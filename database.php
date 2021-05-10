@@ -112,6 +112,15 @@ function alert($msg) {
         echo $ans;
     }
 
+    if($_SERVER['REQUEST_METHOD']=='GET' && isset($_GET['getprojectswithcategory'])){
+        header('Content-type:application/json;charset=utf-8');
+        $connection = connectDb("localhost","root","","nt_projects");
+        $category = $_GET['category'];
+        $result = selectQuery($connection, "SELECT `name` FROM `project` WHERE `function` = '$category'");
+        $ans = json_encode($result);
+        echo $ans;
+    }
+
     if($_SERVER['REQUEST_METHOD']=='GET' && isset($_GET['viewproject'])){
         header('Content-type:application/json;charset=utf-8');
         $connection = connectDb("localhost","root","","nt_projects");
@@ -273,6 +282,24 @@ function alert($msg) {
         $connection = connectDb("localhost","root","","nt_projects");
         $id = $_POST['id'];
         $result = executeQuery($connection, "delete from messages");
+
+        if($result){
+        echo 1;
+        } else {
+            echo -1;
+        }
+    }
+
+    //sending message
+    if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['sendmessage'])){
+        header('Content-Type: text/plain');
+        $connection = connectDb("localhost","root","","nt_projects");
+        $fname = $_POST['firstname'];
+        $lname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $phone_number = $_POST['phone_number'];
+        $message = $_POST['message'];
+        $result = executeQuery($connection, "INSERT INTO `messages`(`first_name`, `last_name`, `email`, `phone_number`, `message`) VALUES ('$fname','$lname','$email','$phone_number','$message')");
 
         if($result){
         echo 1;
